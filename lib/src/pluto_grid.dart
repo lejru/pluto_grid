@@ -467,7 +467,7 @@ class _PlutoGridState extends State<PlutoGrid> {
                           ),
                         if (stateManager.showLoading)
                           Positioned.fill(
-                            child: widget.loading == null ? PlutoLoading(
+                            child: widget.loading ?? PlutoLoading(
                               backgroundColor: stateManager
                                   .configuration!.gridBackgroundColor,
                               indicatorColor: stateManager
@@ -476,7 +476,7 @@ class _PlutoGridState extends State<PlutoGrid> {
                                   .configuration!.localeText.loadingText,
                               indicatorSize: stateManager
                                   .configuration!.cellTextStyle.fontSize,
-                            ):widget.loading,
+                            ),
                           ),
                       ],
                     ),
