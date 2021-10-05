@@ -51,6 +51,8 @@ class PlutoGrid extends StatefulWidget {
 
   final PlutoGridConfiguration? configuration;
 
+  final Widget loading;
+
   /// [PlutoGridMode.normal]
   /// Normal grid with cell editing.
   ///
@@ -72,6 +74,7 @@ class PlutoGrid extends StatefulWidget {
     this.createHeader,
     this.createFooter,
     this.configuration,
+    this.loading,
     this.mode = PlutoGridMode.normal,
   }) : super(key: key);
 
@@ -464,7 +467,7 @@ class _PlutoGridState extends State<PlutoGrid> {
                           ),
                         if (stateManager.showLoading)
                           Positioned.fill(
-                            child: PlutoLoading(
+                            child: widget.loading == null ? PlutoLoading(
                               backgroundColor: stateManager
                                   .configuration!.gridBackgroundColor,
                               indicatorColor: stateManager
@@ -473,7 +476,7 @@ class _PlutoGridState extends State<PlutoGrid> {
                                   .configuration!.localeText.loadingText,
                               indicatorSize: stateManager
                                   .configuration!.cellTextStyle.fontSize,
-                            ),
+                            ):widget.loading,
                           ),
                       ],
                     ),
