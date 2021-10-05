@@ -51,7 +51,7 @@ class PlutoGrid extends StatefulWidget {
 
   final PlutoGridConfiguration? configuration;
 
-  final Widget loading;
+  final Widget? loading;
 
   /// [PlutoGridMode.normal]
   /// Normal grid with cell editing.
