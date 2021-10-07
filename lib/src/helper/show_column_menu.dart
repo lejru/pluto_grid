@@ -56,6 +56,9 @@ Future<PlutoGridColumnMenuItem?>? showColumnMenu({
     position: RelativeRect.fromRect(
         position & const Size(40, 40), Offset.zero & overlay.size),
     items: [
+         if(column!.customActions!=null)
+     ...?column.customActions?.map((e) => buildMenuItem(child:e)) ,const PopupMenuDivider(),
+         
       if (column!.frozen.isFrozen == true)
         buildMenuItem(
           value: PlutoGridColumnMenuItem.unfreeze,

@@ -78,6 +78,8 @@ class PlutoColumn {
   /// Hide the column.
   bool hide;
 
+   List<Widget>? customActions;
+
   PlutoColumn({
     required this.title,
     required this.field,
@@ -101,6 +103,8 @@ class PlutoColumn {
     this.enableSetColumnsMenuItem = true,
     this.enableEditingMode = true,
     this.hide = false,
+    this.customActions
+
   }) : _key = UniqueKey();
 
   /// Column key
